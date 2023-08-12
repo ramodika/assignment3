@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>competition form</title>
+	<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+<style>
+			:root{
+      --success-color: blue;
+      --error-color: #e74c3c;
+    }
+    *{
+      box-sizing: border-box;
+    }
+    body{
+      background-color: #f9fafb;
+      font-family: 'open sans',sans-serif;
+      display: flex;
+      align-items: center;
+      min-height: 30vh;
+    }
+     .container{
+background-color: #fff;
+border-radius: 5px;
+box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+width: 400px;
+top: 2px;
+left: 1100px;
+position: absolute;
+}
+h2{
+  text-align: center;
+  margin: 0 0 20px;
+}
+.form{
+padding: 20px 40px;
+}
+.form-control{
+  margin-bottom:10px;
+padding-bottom: 20px;
+position: relative;
+}
+.form-control label{
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+.form-control input{
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size:14px;
+}
+.form-control input:focus{
+  outline: 0;
+  border-color: #777;
+}
+.form-control.success input{
+  border-color:var(--success-color);
+}
+.form-control.error input{
+  border-color: var(--error-color);
+}
+.form-control small{
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+.form-control.error small{
+  visibility: visible;
+}
+.form button{
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+
+					.colomn5{
+position: absolute;
+top:60%;
+left:48%;
+transform: translate(-50%,-50%);
+}
+			}
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+</style>
+ 
+</head>
+<body>
+
+	<section class="Contact" id="Contact">
+<div class="colomn5"><p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> Are you happy with our service?</p>
+<P>contact us-0715461285</p>
+<p>email-rkphoto2@gmail.com</p></div>
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="22.png" width="1000" height="500">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="bb.png" width="1000" height="500">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <img src="aa.png"  width="1000" height="500">
+  <div class="text"></div>
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image time
+}
+
+</script>
+<div class="container">
+    <form action= method="post" id="form" class="form" onsubmit="return validateForm()">
+        <h2>contact us</h2>
+        <div class="form-control">
+            <label for="customername">customer name</label>
+            <input type="text" id="customername" name="customername" placeholder="Enter your name with title(mr./mrs./miss.)" required>
+            <small id="nameError" class="error">Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="theme">photography Theme</label>
+            <input type="text" id="theme" name="theme" placeholder="Enter your Photography Theme" required>
+            <small id="themeError" class="error">Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter email" required>
+            <small id="emailError" class="error">Error message</small>
+        </div>
+        <div class="form-control">
+            <label for="tpnumber">TPnumber</label>
+            <input type="text" id="tpnumber" name="tpnumber" placeholder="Enter your tpnumber" required>
+            <small id="tpnumberError" class="error">Error message</small>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<script>
+function validateForm() {
+    var isValid = true;
+
+    // Clear previous error messages
+    var errorMessages = document.getElementsByClassName("error");
+    for (var i = 0; i < errorMessages.length; i++) {
+        errorMessages[i].style.display = "none";
+    }
+
+    // Validate customer name
+    var customername = document.getElementById("customername").value;
+    if (customername === "") {
+        document.getElementById("nameError").style.display = "block";
+        isValid = false;
+    }
+
+    // Validate photography theme
+    var theme = document.getElementById("theme").value;
+    if (theme === "") {
+        document.getElementById("themeError").style.display = "block";
+        isValid = false;
+    }
+
+    // Validate email
+    var email = document.getElementById("email").value;
+    var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailPattern.test(email)) {
+        document.getElementById("emailError").style.display = "block";
+        isValid = false;
+    }
+
+    // Validate TP number
+    var tpnumber = document.getElementById("tpnumber").value;
+    if (tpnumber === "") {
+        document.getElementById("tpnumberError").style.display = "block";
+        isValid = false;
+    }
+
+    return isValid;
+}
+</script>
+
+</body>
+</html> 
+
+
+		
